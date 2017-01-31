@@ -40,7 +40,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Map <String, Integer> uniqueWords = new TreeMap<String, Integer>();
 		
-		BufferedReader br = new BufferedReader(new FileReader("src/lyrics.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("src/" + args[0]));
 		
 		try {
 		    String line = br.readLine();
@@ -60,7 +60,7 @@ public class Main {
 		    } 
 		    
 		    int j = 0;
-		    int count = Integer.parseInt(args[0]);
+		    int count = Integer.parseInt(args[1]);
 		    sortByValue(uniqueWords);
 		    Iterator<Map.Entry<String, Integer>> mapIterator = sortByValue(uniqueWords).entrySet().iterator();
 		    while (mapIterator.hasNext() && j<=count) {
